@@ -1,0 +1,229 @@
+
+;*****************************************************************************
+;
+; ASUSumsc.inf   -- Install the ASUS USB 3.0 Boost Storage Driver (WDM)
+;
+; Copyright (c) 1997-2013 MCCI Corporation
+;
+; MCCI is a registered trademark of MCCI Corporation.
+;
+; NOTICE: This software is licensed, not sold.  Any modification of this
+; inf file to change the reference to an operating system or to change the
+; reference to a device is not permitted unless authorized in writing by
+; MCCI Corporation.
+;
+;*****************************************************************************
+
+[version]
+signature="$WINDOWS NT$"
+Class=USB
+ClassGuid={36FC9E60-c465-11cf-8056-444553540000}
+Provider=%Provider%
+DriverVer=03/28/2013,5.30.20.0
+CatalogFile=ASUSumsc.cat
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;-----------------------------------------------------------------------------
+; Specify target paths...
+;-----------------------------------------------------------------------------
+[DestinationDirs]
+DefaultDestDir                  = 11                    ; LDID_SYS
+ASUSWdm.NT.CopyFiles        = 12                    ; system32\drivers
+PropPages.CopyFiles             = 11                    ; system
+
+;-----------------------------------------------------------------------------
+; Specify the install disks.  A bit unwieldy during development.
+;-----------------------------------------------------------------------------
+[SourceDisksNames.x86]
+; diskid = description[, [tagfile] [, <unused>, subdir]]
+1=%DiskString%,"ASUSumsc.sys",,\i386
+
+[SourceDisksNames.amd64]
+; diskid = description[, [tagfile] [, <unused>, subdir]]
+1=%DiskString%,"ASUSumsc.sys",,\amd64
+
+
+[SourceDisksFiles]
+; filename = diskid[, [subdir] [, size]]
+ASUSumsc.sys = 1
+ASUScrnt.sys = 1
+ASUSwhnt.sys = 1
+
+;-----------------------------------------------------------------------------
+; Table of Contents:  manufacturer, then devices.
+;-----------------------------------------------------------------------------
+[Manufacturer]
+%ASUS%=ASUS, NTamd64
+
+;-----------------------------------------------------------------------------
+; The devices
+;-----------------------------------------------------------------------------
+[ASUS]
+%ASUS.Wdm.Desc% = ASUSWdm.Install, ASUS\{907408BB-89B6-4693-B84A-AC2561AB8299}
+%ASUS.Wdm.Desc% = ASUSWdm.Install2, ASUS\{3B6D8ADC-F810-4536-A6D5-324A1A92BF06}
+%ASUS.Wdm.Desc% = ASUSWdm.Install3, ASUS\{98F2FC55-265C-4405-9AA3-57C78C242DAF}
+%ASUS.Wdm.Desc% = ASUSWdm.Install4, ASUS\{21549984-C572-4247-B45E-4C978712D1A3}
+%ASUS.Wdm.Desc% = ASUSWdm.Install3, USB\VID_0000&PID_0000
+
+[ASUS.NTamd64]
+%ASUS.Wdm.Desc% = ASUSWdm.Install, ASUS\{907408BB-89B6-4693-B84A-AC2561AB8299}
+%ASUS.Wdm.Desc% = ASUSWdm.Install2, ASUS\{3B6D8ADC-F810-4536-A6D5-324A1A92BF06}
+%ASUS.Wdm.Desc% = ASUSWdm.Install3, ASUS\{98F2FC55-265C-4405-9AA3-57C78C242DAF}
+%ASUS.Wdm.Desc% = ASUSWdm.Install4, ASUS\{21549984-C572-4247-B45E-4C978712D1A3}
+%ASUS.Wdm.Desc% = ASUSWdm.Install3, USB\VID_0000&PID_0000
+
+;-----------------------------------------------------------------------------
+; On NT, the system first tries [section.NT], then [section].
+;-----------------------------------------------------------------------------
+
+;-----------------------------------------------------------------------------
+; Diagnostics Files CopyFiles List Section
+;-----------------------------------------------------------------------------
+[ASUS.CopyFiles]
+
+;-----------------------------------------------------------------------------
+; XXX when we have a property page DLL, add it to the following section.
+;-----------------------------------------------------------------------------
+[PropPages.CopyFiles]
+
+;-----------------------------------------------------------------------------
+;       How to install the WDM driver on NT
+;-----------------------------------------------------------------------------
+[ASUSWdm.Install.NT]
+DriverVer=03/28/2013,5.30.20.0
+AddReg          = ASUSWdm.AddReg, ASUSWdm.NT.AddReg
+CopyFiles       = ASUSWdm.NT.CopyFiles
+
+[ASUSWdm.Install2.NT]
+AddReg          = ASUSWdm.AddReg2, ASUSWdm.NT.AddReg
+CopyFiles       = ASUSWdm.NT.CopyFiles
+
+[ASUSWdm.Install3.NT]
+AddReg          = ASUSWdm.AddReg3, ASUSWdm.NT.AddReg
+CopyFiles       = ASUSWdm.NT.CopyFiles
+
+[ASUSWdm.Install4.NT]
+AddReg          = ASUSWdm.AddReg4, ASUSWdm.NT.AddReg
+CopyFiles       = ASUSWdm.NT.CopyFiles
+
+;-----------------------------------------------------------------------------
+;       How to start the WDM driver on NT
+;-----------------------------------------------------------------------------
+[ASUSWdm.Install.NT.Services]
+AddService      = ASUSumsc, 2, ASUSWdm.AddService
+
+[ASUSWdm.Install2.NT.Services]
+AddService      = ASUSumsc, 2, ASUSWdm.AddService
+
+[ASUSWdm.Install3.NT.Services]
+AddService      = ASUSumsc, 2, ASUSWdm.AddService
+
+[ASUSWdm.Install4.NT.Services]
+AddService      = ASUSumsc, 2, ASUSWdm.AddService
+
+[ASUSWdm.AddService]
+DisplayName             = %ASUS.Service.Desc%
+ServiceType             = 1     ; SERVICE_KERNEL_DRIVER
+StartType               = 3     ; SERVICE_DEMAND_START
+ErrorControl            = 1     ; SERVICE_ERROR_NORMAL
+ServiceBinary           = %12%\ASUSumsc.sys
+LoadOrderGroup          = Base
+
+;-----------------------------------------------------------------------------
+;       WDM registry entries (all platforms)
+;-----------------------------------------------------------------------------
+[ASUSWdm.AddReg]
+HKR,,CRUpperDescription,,%UpperDescription%
+HKR,,CREnum,,ASUSCR
+;HKR,,EnableSelectiveSuspend, 0x10001, 01,00,00,00
+HKR,, IncrementalTagIdEnable, 0x10001, 01,00,00,00	
+HKR,, SupportUasV4, 0x10001, 01,00,00,00		
+;HKR,, FakeReportLunsEnable, 0x10001, 01,00,00,00	
+;HKR,, SuppressModeSense, 0x10001, 01,00,00,00		
+;HKR,, DeferDataTransferEnable, 0x1001, 01,00,00,00	
+;HKR,, RetryTimerEnable, 0x10001, 01,00,00,00		
+;HKR,, RetryTimerTimeout, 0x10001, F4,01,00,00		
+HKR,, ReportLunsTimeout, 0x10001, E8,03,00,00		
+;HKR,, CommandQueueLength, 0x10001, 08,00,00,00		
+;HKR,, ForceSenseIUV4, 0x10001, 01,00,00,00		
+
+[ASUSWdm.AddReg2]					
+HKR,,CRUpperDescription,,%UpperDescription%		
+HKR,,CREnum,,ASUSCR					
+;HKR,,EnableSelectiveSuspend, 0x10001, 01,00,00,00	
+HKR,, IncrementalTagIdEnable, 0x10001, 01,00,00,00	
+;HKR,, SupportUasV4, 0x10001, 01,00,00,00		
+HKR,, FakeReportLunsEnable, 0x10001, 01,00,00,00	
+HKR,, SuppressModeSense, 0x10001, 01,00,00,00		
+;HKR,, DeferDataTransferEnable, 0x1001, 01,00,00,00	
+;HKR,, RetryTimerEnable, 0x10001, 01,00,00,00		
+;HKR,, RetryTimerTimeout, 0x10001, F4,01,00,00		
+;HKR,, ReportLunsTimeout, 0x10001, E8,03,00,00		
+;HKR,, CommandQueueLength, 0x10001, 08,00,00,00		
+;HKR,, ForceSenseIUV4, 0x10001, 01,00,00,00		
+
+[ASUSWdm.AddReg3]					
+HKR,,CRUpperDescription,,%UpperDescription%		
+HKR,,CREnum,,ASUSCR					
+HKR,, AltSettingToUse, 0x10001, 00,00,00,00		
+
+[ASUSWdm.AddReg4]					
+HKR,,CRUpperDescription,,%UpperDescription%		
+HKR,,CREnum,,ASUSCR					
+;HKR,,EnableSelectiveSuspend, 0x10001, 01,00,00,00	
+HKR,, IncrementalTagIdEnable, 0x10001, 01,00,00,00	
+;HKR,, SupportUasV4, 0x10001, 01,00,00,00		
+;HKR,, FakeReportLunsEnable, 0x10001, 01,00,00,00	
+HKR,, SuppressModeSense, 0x10001, 01,00,00,00		
+;HKR,, DeferDataTransferEnable, 0x1001, 01,00,00,00	
+;HKR,, RetryTimerEnable, 0x10001, 01,00,00,00		
+;HKR,, RetryTimerTimeout, 0x10001, F4,01,00,00		
+;HKR,, ReportLunsTimeout, 0x10001, E8,03,00,00		
+;HKR,, CommandQueueLength, 0x10001, 08,00,00,00		
+;HKR,, ForceSenseIUV4, 0x10001, 01,00,00,00		
+HKR,, NeedDelayMsAtStartup, 0x10001, 64,00,00,00
+
+;-----------------------------------------------------------------------------
+;       WDM registry entries (NT only)
+;-----------------------------------------------------------------------------
+[ASUSWdm.NT.AddReg]
+
+;-----------------------------------------------------------------------------
+;       The WDM copy list for NT -- different because things go in
+;       different places.
+;-----------------------------------------------------------------------------
+[ASUSWdm.NT.CopyFiles]
+ASUSumsc.sys
+ASUSwh.sys,ASUSwhnt.sys
+ASUScr.sys,ASUScrnt.sys
+
+;****************************************************************************
+; Localizable Strings
+;****************************************************************************
+[strings]
+
+;BEGIN ENG - US English Strings
+Provider = "ASUSTek Computer Inc"
+ASUS = "ASUSTek Computer Inc"
+DiskString = "ASUS USB 3.0 Boost Storage Driver Installation Disk"
+
+ASUS.Wdm.Desc = "ASUS USB 3.0 Boost Storage Driver"
+ASUS.Service.Desc = "ASUS USB 3.0 Boost Storage Driver (WDM)"
+
+UpperDescription = "ASUS USB 3.0 Boost Storage Driver"
+
+CustomerDataPath = "ASUS USB 3.0 Boost Storage Driver"
+DriverSet = "ASUS USB 3.0 Boost Storage Software"
+UninstallFile = "ASUSUninstall.exe"
+McciOptions = "Uninstallable"
+
+
+;END ENG - US English Strings
+
+;-----------------------------------------------------------------------------
+; Following are symbolic constants which don't change per locale.
+;-----------------------------------------------------------------------------
+
+;*** end of file ***

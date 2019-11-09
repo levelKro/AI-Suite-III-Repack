@@ -1,0 +1,127 @@
+;*****************************************************************************
+;
+; ASUSfilter.inf   -- ASUS USB Hub filter driver
+;
+; Copyright (c) 1997-2013 MCCI Corporation
+;
+; MCCI is a registered trademark of MCCI Corporation.
+;
+; NOTICE: This software is licensed, not sold.  Any modification of this
+; inf file to change the reference to an operating system or to change the
+; reference to a device is not permitted unless authorized in writing by
+; MCCI Corporation.
+;
+;*****************************************************************************
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGuid={36fc9e60-c465-11cf-8056-444553540000}
+Provider=%Provider%
+DriverVer=03/28/2013,5.30.20.0
+CatalogFile=ASUSfilter.cat
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+;*****************************************
+; MCCI Device Filter Install Section
+;*****************************************
+
+[Manufacturer]
+%ASUS%=ASUS, ntamd64
+
+[ASUS]
+%ASUSFilter.DeviceDesc%=ASUSFilter, USB\VID_XXXX&PID_YYYY
+
+[ASUS.ntamd64]
+%ASUSFilter.DeviceDesc%=ASUSFilter, USB\VID_XXXX&PID_YYYY
+
+;=====================================================================
+[ASUSFilter.NT]  
+;=============== Get the standard stuff from usbport.inf==============
+;Include=usbport.inf
+;Needs=ROOTHUB.Dev.NT
+CopyFiles=ASUSFilter.NT.Copy
+AddReg=ASUSFilter.NT.AddReg
+
+[ASUSFilter.NT.Copy]
+ASUSfilter.sys
+
+[ASUSFilter.NT.AddReg]                            
+; Add registry entries here
+
+[ASUSFilter.NT.HW]
+;================ Add our own stuff
+AddReg = ASUSFilter.NT.HW.AddReg
+
+;================ Add in the standard stuff
+;Include = usbport.inf
+;Needs = ROOTHUB.Dev.NT.HW
+
+[ASUSFilter.NT.HW.AddReg]  
+HKR,,"UpperFilters",0x00010000,"ASUSfilter"
+
+;*****************************************
+; MCCI Device Filter Service Section
+;*****************************************
+
+[ASUSFilter.NT.Services]
+;Do not specify SPSVCINST_ASSOCSERVICE on filter drivers. 
+AddService = ASUSfilter,, filter_Service_Inst 
+
+;-----------------------------------------------------------------------------
+;       How to start the filter driver on NT
+;-----------------------------------------------------------------------------
+;Include=usbport.inf
+;Needs=ROOTHUB.Dev.NT.Services
+
+[filter_Service_Inst]
+DisplayName    = %filter.SvcDesc%                            
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\ASUSfilter.sys                            
+LoadOrderGroup = PNP Filter
+
+;*************************
+; Source file information
+;*************************
+
+[SourceDisksNames.x86]
+1=%DiskId1%,"ASUSfilter.sys",,\i386
+
+[SourceDisksNames.amd64]
+1=%DiskId1%,"ASUSfilter.sys",,\amd64
+
+[SourceDisksFiles]
+ASUSfilter.sys  = 1,,
+
+;****************************************************************************
+; Localizable Strings
+;****************************************************************************
+[Strings]
+
+;BEGIN ENG - US English Strings
+SPSVCINST_ASSOCSERVICE= 0x00000002
+Provider = "ASUSTek Computer Inc"
+ASUS = "(Standard system devices)"
+ClassName = "ASUSFILTER"
+
+DiskId1 = "ASUSfilter Installation Disk"
+ASUSFilter.DeviceDesc = "ASUS USB Hub filter driver"
+filter.SvcDesc = "ASUS USB Hub filter driver"
+
+CustomerDataPath = "ASUS USB 3.0 Boost Storage Driver"
+DriverSet = "ASUS USB 3.0 Boost Storage Software"
+UninstallFile = "ASUSUninstall.exe"
+McciOptions = "Uninstallable"
+
+
+;END ENG - US English Strings
+
+;-----------------------------------------------------------------------------
+; Following are symbolic constants which don't change per locale.
+;-----------------------------------------------------------------------------
+
+;*** end of file ***

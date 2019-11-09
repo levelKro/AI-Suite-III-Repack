@@ -1,0 +1,237 @@
+;*****************************************************************************
+;
+; ASUSstor.inf   -- Install the ASUS USB 3.0 Boost Storage Driver (Storage Driver)
+;
+; Copyright (c) 1997-2013 MCCI Corporation
+;
+; MCCI is a registered trademark of MCCI Corporation.
+;
+; NOTICE: This software is licensed, not sold.  Any modification of this
+; inf file to change the reference to an operating system or to change the
+; reference to a device is not permitted unless authorized in writing by
+; MCCI Corporation.
+;
+;*****************************************************************************
+
+[version]
+signature="$WINDOWS NT$"
+Class=SCSIAdapter
+ClassGUID={4D36E97B-E325-11CE-BFC1-08002BE10318}
+Provider=%Provider%
+DriverVer=03/28/2013,5.30.20.0
+Compatible = 1
+CatalogFile=ASUSumsc.cat
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;-----------------------------------------------------------------------------
+; Specify target paths...
+;-----------------------------------------------------------------------------
+[DestinationDirs]
+DefaultDestDir = 12           ; LDID_SYS
+ASUS.xpstor.CopyFiles = 12  ; LDID_SYS
+ASUS.storport.CopyFiles = 12  ; LDID_SYS
+ASUS.xpstor.nt.CopyFiles = 12
+ASUS.storport.nt.CopyFiles = 12
+
+;-----------------------------------------------------------------------------
+; Specify the install disks.  
+;-----------------------------------------------------------------------------
+[SourceDisksNames.x86]
+; diskid = description[, [tagfile] [, <unused>, subdir]]
+1=%DiskString%,"ASUSstpt.sys",,\i386
+
+[SourceDisksNames.amd64]
+; diskid = description[, [tagfile] [, <unused>, subdir]]
+1=%DiskString%,"ASUSstpt.sys",,\amd64
+
+[SourceDisksFiles]
+ASUSxpsp.sys=1
+ASUSstpt.sys=1
+
+;-----------------------------------------------------------------------------
+; Table of Contents:  manufacturer, then devices.
+;-----------------------------------------------------------------------------
+[Manufacturer]
+%ASUS%=ASUS,NTamd64
+
+;-----------------------------------------------------------------------------
+; The Storage devices
+;-----------------------------------------------------------------------------
+[ASUS]
+%StorportDesc% = ASUS.storport, ASUSCR\{D6EF3E17-93DB-4bd9-9CDD-E23BD67EAA55}
+%UasStorportDesc% = ASUS.storport, ASUSCR\{DBC0EE6D-C77E-40f8-9D47-1E4F0A2A3505}
+
+%ScsiportDesc% = ASUS.xpstor, ASUSCR\{EFE0D6E2-0BDE-4525-88CE-0705F5B643E6}
+%UasScsiportDesc% = ASUS.xpstor, ASUSCR\{015E02C9-1042-416c-938B-B32C030BDEF7}
+
+[ASUS.NTamd64]
+%StorportDesc% = ASUS.storport, ASUSCR\{D6EF3E17-93DB-4bd9-9CDD-E23BD67EAA55}
+%UasStorportDesc% = ASUS.storport, ASUSCR\{DBC0EE6D-C77E-40f8-9D47-1E4F0A2A3505}
+
+%ScsiportDesc% = ASUS.xpstor, ASUSCR\{EFE0D6E2-0BDE-4525-88CE-0705F5B643E6}
+%UasScsiportDesc% = ASUS.xpstor, ASUSCR\{015E02C9-1042-416c-938B-B32C030BDEF7}
+
+;*****************************************************************************
+;
+; services:
+;
+;	You would think that '\' continuation would make the following 
+;	more readable.  It only succeeds in breaking things.  Keep all this
+;	on one line!
+;
+;*****************************************************************************
+
+[ASUS.storport.nt]
+AddReg = ASUS.stor.reg.nt,ASUS.storport.reg.nt,ASUS.stor.Gen.Resources,ASUS.xpstor.Gen.Params
+CopyFiles = ASUS.storport.nt.CopyFiles
+
+[ASUS.xpstor.nt]
+AddReg = ASUS.stor.reg.nt,ASUS.xpstor.reg.nt,ASUS.stor.Gen.Resources,ASUS.storport.Gen.Params
+CopyFiles = ASUS.xpstor.nt.CopyFiles
+
+[ASUS.storport.nt.hw]
+AddReg = AddReg_HW_RemovalPolicy
+[ASUS.xpstor.nt.hw]
+AddReg = AddReg_HW_RemovalPolicy
+
+[AddReg_HW_RemovalPolicy]
+HKR,, RemovalPolicy, 0x10001, 03,00,00,00
+
+;-----------------------------------------------------------------------------
+; Install all the normal things in the registry 
+;-----------------------------------------------------------------------------
+
+;-----------------------------------------------------------------------------
+; General Resources
+;-----------------------------------------------------------------------------
+[ASUS.stor.Gen.Resources]
+HKR,, DisableScsiEnclosureService, 0x10001, 0x01
+
+;-----------------------------------------------------------------------------
+; General Params.
+;-----------------------------------------------------------------------------
+
+[ASUS.xpstor.Gen.Params]
+;HKR,,DeviceName,,"%ASUS.xpstor.guid%"
+
+
+[ASUS.storport.Gen.Params]
+;HKR,,DeviceName,,"%ASUS.storport.guid%"
+
+
+;-----------------------------------------------------------------------------
+;	Storage devload info for Win2K and above
+;-----------------------------------------------------------------------------
+[ASUS.stor.reg.nt]
+HKR,,DriverDesc,,%ASUS.stor.DriverDesc%
+HKR,, ForceCmdQueueEnable, 0x10001, 01,00,00,00
+
+[ASUS.xpstor.reg.nt]
+;HKR,Adapter,DeviceId,,%ASUS.xpstor.guid%
+HKR,Adapter,Service,,"ASUSxpsp"
+HKR,, MaximumTransferLength, 0x10001, 0x00102000
+
+[ASUS.storport.reg.nt]
+;HKR,Adapter,DeviceId,,%ASUS.storport.guid%
+HKR,Adapter,Service,,"ASUSstpt"
+
+
+[ASUS.storport.NT.Services]
+AddService      = ASUSstpt, 2, ASUS.storport.AddService, Miniport_EventLog_Inst
+
+[ASUS.storport.AddService]
+DisplayName             = %ASUS.Service.Desc%
+ServiceType             = 1     ; SERVICE_KERNEL_DRIVER
+StartType               = 3     ; SERVICE_DEMAND_START
+ErrorControl            = 1     ; SERVICE_ERROR_NORMAL
+ServiceBinary           = %12%\ASUSstpt.sys
+LoadOrderGroup          = Base
+AddReg                  = pnpsafe_internal_addreg
+AddReg                  = bus_type_usb
+
+[ASUS.xpstor.NT.Services]
+AddService      = ASUSxpsp, 2, ASUS.xpstor.AddService, Miniport_EventLog_Inst
+
+[ASUS.xpstor.AddService]
+DisplayName             = %ASUS.Service.Desc%
+ServiceType             = 1     ; SERVICE_KERNEL_DRIVER
+StartType               = 3     ; SERVICE_DEMAND_START
+ErrorControl            = 1     ; SERVICE_ERROR_NORMAL
+ServiceBinary           = %12%\ASUSxpsp.sys
+LoadOrderGroup          = Base
+AddReg                  = pnpsafe_internal_addreg
+AddReg                  = pnpsafe_pnpbus_addreg
+
+[pnpsafe_internal_addreg]
+HKR, "Parameters\PnpInterface", "0", 0x00010001, 0x00000001
+
+[pnpsafe_pnpbus_addreg]
+HKR, "Parameters\PnpInterface", "15", 0x00010001, 0x00000001
+
+[bus_type_usb]
+HKR, "Parameters", "BusType", 0x00010001, 0x00000007
+
+[Miniport_EventLog_Inst]
+AddReg = Miniport_EventLog_AddReg
+
+[Miniport_EventLog_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+;-----------------------------------------------------------------------------
+; Some copyfiles sections
+;-----------------------------------------------------------------------------
+[ASUS.xpstor.CopyFiles]
+ASUSxpsp.sys
+
+[ASUS.storport.CopyFiles]
+ASUSstpt.sys
+
+[ASUS.xpstor.nt.CopyFiles]
+ASUSxpsp.sys
+
+[ASUS.storport.nt.CopyFiles]
+ASUSstpt.sys
+
+
+;****************************************************************************
+; Localizable Strings
+;****************************************************************************
+[strings]
+
+;BEGIN ENG - US English Strings
+Provider = "ASUSTek Computer Inc"
+ASUS = "ASUSTek Computer Inc"
+DiskString = "ASUS USB 3.0 Boost Storage Driver Installation Disk"
+
+ASUS.stor.DriverDesc = "ASUS USB 3.0 Boost Storage Driver"
+ScsiportDesc = "ASUS BOT Storage Driver"
+StorportDesc = "ASUS BOT Storage Driver"
+UasScsiportDesc = "ASUS UAS Storage Driver"
+UasStorportDesc = "ASUS UAS Storage Driver"
+
+ASUS.Service.Desc = "ASUS USB 3.0 Boost Storage Driver (Storage Driver)"
+
+CustomerDataPath = "ASUS USB 3.0 Boost Storage Driver"
+DriverSet = "ASUS USB 3.0 Boost Storage Software"
+UninstallFile = "ASUSUninstall.exe"
+McciOptions = "Uninstallable"
+
+
+;END ENG - US English Strings
+
+;-----------------------------------------------------------------------------
+; Following are symbolic constants which don't change per locale.
+;-----------------------------------------------------------------------------
+ASUS.storport.guid = "ASUSCR\{D6EF3E17-93DB-4bd9-9CDD-E23BD67EAA55}"
+
+ASUS.xpstor.guid = "ASUSCR\{EFE0D6E2-0BDE-4525-88CE-0705F5B643E6}"
+
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+
+
+;*** end of file ***

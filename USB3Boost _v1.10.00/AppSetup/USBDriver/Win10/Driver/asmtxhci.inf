@@ -1,0 +1,1174 @@
+;*****************************************************************************
+;
+; Name:  asmtxhci.inf
+;
+; Function:
+;	Install ASMEDIA XHCI Host Controller Driver 
+;
+; Copyright (c) 2009-2015 ASMedia Technology Inc. ,  MCCI Corporation
+;
+; MCCI(R) is a registered trademark of MCCI Corporation.
+;
+; NOTICE: This software is licensed, not sold.  Any modification of this
+; inf file to change the reference to an operating system or to change the
+; reference to a device is not permitted unless authorized in writing by
+; MCCI Corporation
+;
+;*****************************************************************************
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=USB
+ClassGuid={36fc9e60-c465-11cf-8056-444553540000}
+Provider=%Provider%
+DriverVer=06/03/2015, 1.16.26.1
+CatalogFile=asmtxhci.cat
+
+[SourceDisksNames.x86]
+1=%DiskKey%,"asmtxhci.sys",,\i386
+
+[SourceDisksNames.amd64]
+1=%DiskKey%,"asmtxhci.sys",,\amd64
+
+[SourceDisksNames.ia64]
+1=%DiskKey%,"asmtxhci.sys",,\ia64
+
+[SourceDisksFiles.x86]
+asmtxhci.sys=1
+
+[SourceDisksFiles.amd64]
+asmtxhci.sys=1
+
+[SourceDisksFiles.ia64]
+asmtxhci.sys=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Manufacturer]
+%ASMEDIA.MFG%=ASMEDIA, ntx86, ntamd64, ntia64
+
+[ASMEDIA.ntamd64]
+%ASMEDIA_Product_1%=ASMEDIA_Product1_Install,PCI\VEN_1B21&DEV_1040&REV_00
+%ASMEDIA_Product_2%=ASMEDIA_Product2_Install,PCI\VEN_1B21&DEV_1040&REV_01
+%ASMEDIA_Product_3%=ASMEDIA_Product3_Install,PCI\VEN_1B21&DEV_1040&REV_02
+%ASMEDIA_Product_4%=ASMEDIA_Product4_Install,PCI\VEN_1B21&DEV_1041&REV_00
+%ASMEDIA_Product_5%=ASMEDIA_Product5_Install,PCI\VEN_1B21&DEV_1041&REV_01
+%ASMEDIA_Product_6%=ASMEDIA_Product6_Install,PCI\VEN_1B21&DEV_1041&REV_02
+%ASMEDIA_Product_7%=ASMEDIA_Product7_Install,PCI\VEN_1B21&DEV_1042&REV_00
+%ASMEDIA_Product_8%=ASMEDIA_Product8_Install,PCI\VEN_1B21&DEV_1042&REV_01
+%ASMEDIA_Product_9%=ASMEDIA_Product9_Install,PCI\VEN_1B21&DEV_1042&REV_02
+%ASMEDIA_Product_10%=ASMEDIA_Product10_Install,PCI\VEN_1B21&DEV_1142&REV_00
+%ASMEDIA_Product_11%=ASMEDIA_Product11_Install,PCI\VEN_1B21&DEV_1240&REV_00
+%ASMEDIA_Product_12%=ASMEDIA_Product12_Install,PCI\VEN_1B21&DEV_1241&REV_00
+%ASMEDIA_Product_13%=ASMEDIA_Product13_Install,PCI\VEN_1B21&DEV_1242&REV_00
+%ASMEDIA_Product_14%=ASMEDIA_Product14_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_00
+%ASMEDIA_Product_15%=ASMEDIA_Product15_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_01
+%ASMEDIA_Product_16%=ASMEDIA_Product16_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_02
+%ASMEDIA_Product_17%=ASMEDIA_Product17_Install,PCI\VEN_1B21&DEV_1142&SUBSYS_85BF1043&REV_00
+
+[ASMEDIA.ntia64]
+%ASMEDIA_Product_1%=ASMEDIA_Product1_Install,PCI\VEN_1B21&DEV_1040&REV_00
+%ASMEDIA_Product_2%=ASMEDIA_Product2_Install,PCI\VEN_1B21&DEV_1040&REV_01
+%ASMEDIA_Product_3%=ASMEDIA_Product3_Install,PCI\VEN_1B21&DEV_1040&REV_02
+%ASMEDIA_Product_4%=ASMEDIA_Product4_Install,PCI\VEN_1B21&DEV_1041&REV_00
+%ASMEDIA_Product_5%=ASMEDIA_Product5_Install,PCI\VEN_1B21&DEV_1041&REV_01
+%ASMEDIA_Product_6%=ASMEDIA_Product6_Install,PCI\VEN_1B21&DEV_1041&REV_02
+%ASMEDIA_Product_7%=ASMEDIA_Product7_Install,PCI\VEN_1B21&DEV_1042&REV_00
+%ASMEDIA_Product_8%=ASMEDIA_Product8_Install,PCI\VEN_1B21&DEV_1042&REV_01
+%ASMEDIA_Product_9%=ASMEDIA_Product9_Install,PCI\VEN_1B21&DEV_1042&REV_02
+%ASMEDIA_Product_10%=ASMEDIA_Product10_Install,PCI\VEN_1B21&DEV_1142&REV_00
+%ASMEDIA_Product_11%=ASMEDIA_Product11_Install,PCI\VEN_1B21&DEV_1240&REV_00
+%ASMEDIA_Product_12%=ASMEDIA_Product12_Install,PCI\VEN_1B21&DEV_1241&REV_00
+%ASMEDIA_Product_13%=ASMEDIA_Product13_Install,PCI\VEN_1B21&DEV_1242&REV_00
+%ASMEDIA_Product_14%=ASMEDIA_Product14_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_00
+%ASMEDIA_Product_15%=ASMEDIA_Product15_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_01
+%ASMEDIA_Product_16%=ASMEDIA_Product16_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_02
+%ASMEDIA_Product_17%=ASMEDIA_Product17_Install,PCI\VEN_1B21&DEV_1142&SUBSYS_85BF1043&REV_00
+
+[ASMEDIA.ntx86]
+%ASMEDIA_Product_1%=ASMEDIA_Product1_Install,PCI\VEN_1B21&DEV_1040&REV_00
+%ASMEDIA_Product_2%=ASMEDIA_Product2_Install,PCI\VEN_1B21&DEV_1040&REV_01
+%ASMEDIA_Product_3%=ASMEDIA_Product3_Install,PCI\VEN_1B21&DEV_1040&REV_02
+%ASMEDIA_Product_4%=ASMEDIA_Product4_Install,PCI\VEN_1B21&DEV_1041&REV_00
+%ASMEDIA_Product_5%=ASMEDIA_Product5_Install,PCI\VEN_1B21&DEV_1041&REV_01
+%ASMEDIA_Product_6%=ASMEDIA_Product6_Install,PCI\VEN_1B21&DEV_1041&REV_02
+%ASMEDIA_Product_7%=ASMEDIA_Product7_Install,PCI\VEN_1B21&DEV_1042&REV_00
+%ASMEDIA_Product_8%=ASMEDIA_Product8_Install,PCI\VEN_1B21&DEV_1042&REV_01
+%ASMEDIA_Product_9%=ASMEDIA_Product9_Install,PCI\VEN_1B21&DEV_1042&REV_02
+%ASMEDIA_Product_10%=ASMEDIA_Product10_Install,PCI\VEN_1B21&DEV_1142&REV_00
+%ASMEDIA_Product_11%=ASMEDIA_Product11_Install,PCI\VEN_1B21&DEV_1240&REV_00
+%ASMEDIA_Product_12%=ASMEDIA_Product12_Install,PCI\VEN_1B21&DEV_1241&REV_00
+%ASMEDIA_Product_13%=ASMEDIA_Product13_Install,PCI\VEN_1B21&DEV_1242&REV_00
+%ASMEDIA_Product_14%=ASMEDIA_Product14_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_00
+%ASMEDIA_Product_15%=ASMEDIA_Product15_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_01
+%ASMEDIA_Product_16%=ASMEDIA_Product16_Install,PCI\VEN_1B21&DEV_1042&SUBSYS_84881043&REV_02
+%ASMEDIA_Product_17%=ASMEDIA_Product17_Install,PCI\VEN_1B21&DEV_1142&SUBSYS_85BF1043&REV_00
+
+[ASMEDIA_Product10_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x40100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+
+[ASMEDIA_Product10_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product10_Install.AddReg
+AddReg=ASMEDIA_Product10_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product10_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product10_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product10_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product10_Install.AddReg
+AddReg=ASMEDIA_Product10_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product10_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product10_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product10_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product10_Install.AddReg
+AddReg=ASMEDIA_Product10_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product10_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product10_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product10_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{E59A8E1A-D89A-4ad5-A4F5-BEF5A4BFF8CD}"
+
+[ASMEDIA_Product11_Install.AddReg]
+HKR,,DataPumpAutoLpmEnable, 0x10001, 0
+HKR,,DataPumpHardwareLpmEnable, 0x10001, 0
+HKR,,DataPumpUxEnable, 0x10001, 0
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdU3EntryEnable, 0x10001, 0
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x40100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+
+[ASMEDIA_Product11_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product11_Install.AddReg
+AddReg=ASMEDIA_Product11_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product11_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product11_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product11_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product11_Install.AddReg
+AddReg=ASMEDIA_Product11_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product11_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product11_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product11_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product11_Install.AddReg
+AddReg=ASMEDIA_Product11_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product11_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product11_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product11_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{F77F0BE2-39FB-4DB4-9D9B-313A143274EB}"
+
+[ASMEDIA_Product12_Install.AddReg]
+HKR,,DataPumpAutoLpmEnable, 0x10001, 0
+HKR,,DataPumpHardwareLpmEnable, 0x10001, 0
+HKR,,DataPumpUxEnable, 0x10001, 0
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdU3EntryEnable, 0x10001, 0
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x40100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+
+[ASMEDIA_Product12_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product12_Install.AddReg
+AddReg=ASMEDIA_Product12_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product12_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product12_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product12_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product12_Install.AddReg
+AddReg=ASMEDIA_Product12_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product12_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product12_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product12_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product12_Install.AddReg
+AddReg=ASMEDIA_Product12_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product12_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product12_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product12_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{F715308F-BDB6-41DC-B914-4959632989B4}"
+
+[ASMEDIA_Product13_Install.AddReg]
+HKR,,DataPumpAutoLpmEnable, 0x10001, 0
+HKR,,DataPumpHardwareLpmEnable, 0x10001, 0
+HKR,,DataPumpUxEnable, 0x10001, 0
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdU3EntryEnable, 0x10001, 0
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x40100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+
+[ASMEDIA_Product13_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product13_Install.AddReg
+AddReg=ASMEDIA_Product13_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product13_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product13_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product13_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product13_Install.AddReg
+AddReg=ASMEDIA_Product13_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product13_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product13_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product13_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product13_Install.AddReg
+AddReg=ASMEDIA_Product13_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product13_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product13_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product13_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{AAE49824-B3C3-4E7C-B7E1-B24A1C458DB5}"
+
+[ASMEDIA_Product14_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product14_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product14_Install.AddReg
+AddReg=ASMEDIA_Product14_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product14_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product14_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product14_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product14_Install.AddReg
+AddReg=ASMEDIA_Product14_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product14_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product14_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product14_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product14_Install.AddReg
+AddReg=ASMEDIA_Product14_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product14_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product14_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product14_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{B06FEC34-C6E3-4dca-9FB5-3E72652467E5}"
+
+[ASMEDIA_Product15_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product15_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product15_Install.AddReg
+AddReg=ASMEDIA_Product15_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product15_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product15_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product15_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product15_Install.AddReg
+AddReg=ASMEDIA_Product15_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product15_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product15_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product15_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product15_Install.AddReg
+AddReg=ASMEDIA_Product15_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product15_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product15_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product15_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{4A4EFAC3-0BDC-461b-94E1-0C88641E2EE4}"
+
+[ASMEDIA_Product16_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product16_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product16_Install.AddReg
+AddReg=ASMEDIA_Product16_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product16_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product16_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product16_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product16_Install.AddReg
+AddReg=ASMEDIA_Product16_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product16_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product16_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product16_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product16_Install.AddReg
+AddReg=ASMEDIA_Product16_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product16_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product16_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product16_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{59280722-96F4-40d5-8767-C0514CB5BBEA}"
+
+[ASMEDIA_Product17_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product17_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product17_Install.AddReg
+AddReg=ASMEDIA_Product17_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product17_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product17_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product17_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product17_Install.AddReg
+AddReg=ASMEDIA_Product17_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product17_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product17_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product17_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product17_Install.AddReg
+AddReg=ASMEDIA_Product17_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product17_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product17_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product17_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{39005E3D-57FF-400c-8629-9394820C3ABC}"
+
+[ASMEDIA_Product1_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product1_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product1_Install.AddReg
+AddReg=ASMEDIA_Product1_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product1_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product1_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product1_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product1_Install.AddReg
+AddReg=ASMEDIA_Product1_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product1_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product1_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product1_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product1_Install.AddReg
+AddReg=ASMEDIA_Product1_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product1_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product1_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product1_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{55D3FF12-F8D1-485c-97A5-18B114D5BFC7}"
+
+[ASMEDIA_Product2_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product2_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product2_Install.AddReg
+AddReg=ASMEDIA_Product2_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product2_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product2_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product2_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product2_Install.AddReg
+AddReg=ASMEDIA_Product2_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product2_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product2_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product2_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product2_Install.AddReg
+AddReg=ASMEDIA_Product2_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product2_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product2_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product2_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{A7A63970-C50C-4217-BBF9-2BF5BD071EDC}"
+
+[ASMEDIA_Product3_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product3_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product3_Install.AddReg
+AddReg=ASMEDIA_Product3_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product3_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product3_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product3_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product3_Install.AddReg
+AddReg=ASMEDIA_Product3_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product3_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product3_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product3_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product3_Install.AddReg
+AddReg=ASMEDIA_Product3_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product3_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product3_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product3_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{7F5666AF-5495-4f75-843F-73C47806B4DB}"
+
+[ASMEDIA_Product4_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product4_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product4_Install.AddReg
+AddReg=ASMEDIA_Product4_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product4_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product4_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product4_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product4_Install.AddReg
+AddReg=ASMEDIA_Product4_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product4_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product4_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product4_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product4_Install.AddReg
+AddReg=ASMEDIA_Product4_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product4_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product4_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product4_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{BD0AC367-5888-43e8-9516-1EE24ABEF212}"
+
+[ASMEDIA_Product5_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product5_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product5_Install.AddReg
+AddReg=ASMEDIA_Product5_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product5_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product5_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product5_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product5_Install.AddReg
+AddReg=ASMEDIA_Product5_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product5_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product5_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product5_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product5_Install.AddReg
+AddReg=ASMEDIA_Product5_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product5_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product5_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product5_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{5D3FAD1D-39F0-4e33-8F8D-2A28EA96CC4E}"
+
+[ASMEDIA_Product6_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product6_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product6_Install.AddReg
+AddReg=ASMEDIA_Product6_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product6_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product6_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product6_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product6_Install.AddReg
+AddReg=ASMEDIA_Product6_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product6_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product6_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product6_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product6_Install.AddReg
+AddReg=ASMEDIA_Product6_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product6_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product6_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product6_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{50052A3C-8C02-48cd-9F36-20C772748CAA}"
+
+[ASMEDIA_Product7_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product7_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product7_Install.AddReg
+AddReg=ASMEDIA_Product7_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product7_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product7_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product7_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product7_Install.AddReg
+AddReg=ASMEDIA_Product7_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product7_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product7_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product7_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product7_Install.AddReg
+AddReg=ASMEDIA_Product7_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product7_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product7_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product7_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{AAE0EE38-6D86-49f3-ADB8-9725BCF52D28}"
+
+[ASMEDIA_Product8_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product8_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product8_Install.AddReg
+AddReg=ASMEDIA_Product8_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product8_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product8_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product8_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product8_Install.AddReg
+AddReg=ASMEDIA_Product8_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product8_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product8_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product8_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product8_Install.AddReg
+AddReg=ASMEDIA_Product8_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product8_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product8_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product8_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{EEB22E86-F039-4a13-8CA0-F2714B2FF96A}"
+
+[ASMEDIA_Product9_Install.AddReg]
+HKR,,DataPumpWakeOnConnectionEnable, 0x10001, 0
+HKR,,DataPumpWakeOnDisconnectionEnable, 0x10001, 0
+HKR,,DataPumpXhcdNumOfBufferSegment, 0x10001, 0x8
+HKR,,DataPumpXhcdUsb2PortMap, 1, 02,04,03
+HKR,,DataPumpXhcdUsb3PortMap, 1, 02,01,02
+HKR,,DataPumpXhcdWiringValue, 0x10001, 0x70100
+HKR,,EnableAcpiPortConfig, 0x10001, 0x1
+HKR,,WakeEnabled, 0x10001, 0x1
+HKR,,WdkSelectiveSuspendEnable, 0x10001, 0
+
+[ASMEDIA_Product9_Install.ntamd64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.amd64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product9_Install.AddReg
+AddReg=ASMEDIA_Product9_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product9_Install.ntamd64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product9_Install.ntamd64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product9_Install.ntia64]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.ia64
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product9_Install.AddReg
+AddReg=ASMEDIA_Product9_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product9_Install.ntia64.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product9_Install.ntia64.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product9_Install.ntx86]
+FeatureScore=80
+CopyFiles=asmtxhci.CopyFiles.x86
+DriverVer=06/03/2015, 1.16.26.1
+AddReg=ASMEDIA_Product9_Install.AddReg
+AddReg=ASMEDIA_Product9_Install_DeviceInterfaceGuids
+AddReg=asmtxhci.DeviceInterfaceGuids
+AddReg=asmtxhci.ProductDeviceInterfaceGuids
+
+[ASMEDIA_Product9_Install.ntx86.hw]
+AddReg=asmtxhci.MsiConfig
+
+[ASMEDIA_Product9_Install.ntx86.services]
+AddService=asmtxhci,0x00000002,asmtxhci_service
+
+[ASMEDIA_Product9_Install_DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI_2104_00,, "{AA3317A6-E515-48be-9ABA-FAEDF84305C8}"
+
+[asmtxhci.CopyFiles.amd64]
+asmtxhci.sys
+
+[asmtxhci.CopyFiles.ia64]
+asmtxhci.sys
+
+[asmtxhci.CopyFiles.x86]
+asmtxhci.sys
+
+[asmtxhci.DeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_XHCI,, "{F79B1507-8B6B-4722-A24F-55EDB5E14AAA}"
+
+[asmtxhci.MsiConfig]
+HKR, "Interrupt Management", 0x00000010
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", 0x00000010
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MSISupported, 0x00010001, 1
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MessageNumberLimit, 0x00010001, 1
+
+[asmtxhci.ProductDeviceInterfaceGuids]
+HKR,DeviceInterfaces,GUID_DEVINTERFACE_ASMEDIA_USB3_DRIVERS,, "{A7E675DB-4F15-4cf1-9F60-431474707087}"
+
+[asmtxhci_service]
+DisplayName=%asmtxhci_ServiceDescription%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\asmtxhci.sys
+LoadOrderGroup=Base
+
+[Strings]
+ASMEDIA.MFG = "ASMedia Technology Inc"
+ASMEDIA_Product_1 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_10 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_11 = "ASMedia USB3.1 eXtensible Host Controller"
+ASMEDIA_Product_12 = "ASMedia USB3.1 eXtensible Host Controller"
+ASMEDIA_Product_13 = "ASMedia USB3.1 eXtensible Host Controller"
+ASMEDIA_Product_14 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_15 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_16 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_17 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_2 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_3 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_4 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_5 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_6 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_7 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_8 = "ASMedia USB3.0 eXtensible Host Controller"
+ASMEDIA_Product_9 = "ASMedia USB3.0 eXtensible Host Controller"
+DiskKey = "ASMedia USB 3.1 Install Disk"
+Provider = "ASMedia Technology Inc"
+asmtxhci_ServiceDescription = "ASMEDIA XHCI Service"
+
+;**** end of file ****

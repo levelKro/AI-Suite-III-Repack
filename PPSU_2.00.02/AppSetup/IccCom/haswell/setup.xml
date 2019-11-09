@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ICC_INSTALL>
+	<Install_Path DeviceId = "0x1C3A" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>	
+	<Install_Path DeviceId = "0x1E3A" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>	
+	<Install_Path DeviceId = "0x1CBA" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>	
+	<Install_Path DeviceId = "0x1DBA" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>	
+	<Install_Path DeviceId = "0x8C3A" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>
+	<Install_Path DeviceId = "0x8CBA" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>
+	<Install_Path DeviceId = "0x8D3A" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>
+	
+</ICC_INSTALL>
