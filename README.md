@@ -1,5 +1,8 @@
 # AI Suite III Repack
-Repack the AI Suite III from Asus - for B350-* motherboards
+Repack the AI Suite III from Asus - for B350-* motherboards and compatibles
+
+- List of AI Suite 3 modules in this pack : https://prntscr.com/tqy509
+- List of AI Suite 3 tabs in this pack : https://prntscr.com/tqy53k
  
 ## Why this package ?
 For unknown reason, Asus release AI Suite III without all programs, and some times, one of them don't work correctly. Some time program is renamed, or use another core system. This package contain all tested programs and keep up to date with latest release of each apps and AI SUite III core.
