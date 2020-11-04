@@ -1,6 +1,12 @@
 # AI Suite III Repack
 Repack the AI Suite III from Asus - for ASUS motherboards compatibles with AI Suite III
 
+## 2 VERSIONS (BRANCH)
+Please read the 'Know bugs' section of this document for all details.
+- MASTER : all apps (with conflict if all are installed), (with FanXpert2 standalone setup)
+- MASTERFIX : all apps (without conflict if all are installed). (without FanXpert2 standalone setup, but included in PPSU)
+
+## In the MASTER release
 - List of AI Suite 3 modules in this pack : https://prntscr.com/tqy509
 - List of AI Suite 3 tabs in this pack : https://prntscr.com/tqy53k
  
@@ -10,7 +16,7 @@ For unknown reason, Asus release AI Suite III without all programs, and some tim
 ## Is safe ?
 Yes, you can scan it if you want, if any of this file have a problem (corrupted, virus infected, etc...) please report it.
 
-## Known bugs ?
+## Know bugs ?
 Yes, if you want use the Performance and Power Saving Utilities, you need to remove (or not select) the Fan Xpert 2, is already included in the Performance and Power Saving Utilities. If you install the both, you got the 'FxMessage Error Window' and AI Suite main application 'freeze'.
 
 ## Files are edited/modified ?
