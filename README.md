@@ -11,7 +11,7 @@ For unknown reason, Asus release AI Suite III without all programs, and some tim
 Yes, you can scan it if you want, if any of this file have a problem (corrupted, virus infected, etc...) please report it.
 
 ## Known bugs ?
-Yes, if you want use the Power saving and Performance utilities, you need to remove (or not select) the Fan Xpert 2, is already included in the Power saving and Performance module. If you install the both, you got the 'FxMessage Error Window' and AI Suite main application 'freeze'.
+Yes, if you want use the Performance and Power Saving Utilities, you need to remove (or not select) the Fan Xpert 2, is already included in the Performance and Power Saving Utilities. If you install the both, you got the 'FxMessage Error Window' and AI Suite main application 'freeze'.
 
 ## Files are edited/modified ?
 No, only add packages for AI Suite III features in setup folder. Only manipulate files in folders or edit install menu for informations.
