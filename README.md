@@ -1,5 +1,5 @@
 # AI Suite III Repack
-Repack the AI Suite III from Asus - for B350-* motherboards and compatibles
+Repack the AI Suite III from Asus - for ASUS motherboards compatibles with AI Suite III
 
 - List of AI Suite 3 modules in this pack : https://prntscr.com/tqy509
 - List of AI Suite 3 tabs in this pack : https://prntscr.com/tqy53k
@@ -10,13 +10,19 @@ For unknown reason, Asus release AI Suite III without all programs, and some tim
 ## Is safe ?
 Yes, you can scan it if you want, if any of this file have a problem (corrupted, virus infected, etc...) please report it.
 
+## Known bugs ?
+Yes, if you want use the Power saving and Performance utilities, you need to remove (or not select) the Fan Xpert 2, is already included in the Power saving and Performance module. If you install the both, you got the 'FxMessage Error Window' and AI Suite main application 'freeze'.
+
 ## Files are edited/modified ?
-No, only add packages for AI Suite III features in setup folder. Only manipulate files in folders or edit instalk menu for informations.
+No, only add packages for AI Suite III features in setup folder. Only manipulate files in folders or edit install menu for informations.
+
+## I have found a missing installation of AI Suite componement
+If I have miss one feature of AI Suite III and you have the link for get this one, you can open a ticket for report it.
 
 ## What is the requirement ?
 * Microsoft Windows 10 X64, can be working on Windows 7/8/8.1 X64 also.
 * Tested with AMD Ryzen processor, but no reason to not work on another if AI Suite III is supported.
-* Asus B350-* motherboards (can work with others Asus mainboards, if AI Suite III is already supported).
+* Test on Asus B350-Prime Plus motherboard (can work with others Asus mainboards, if AI Suite III is already supported).
 
 ## Is copyrighted ?
 Yes, to Asus. I not take part of the copyright of Asus. Is offered under distribution license.
