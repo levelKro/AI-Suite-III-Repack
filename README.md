@@ -7,8 +7,19 @@ Please read the 'Know bugs' section of this document for all details.
 - MASTERFIX : all apps (without conflict if all are installed). (without FanXpert2 standalone setup, but included in PPSU)
 
 ## In the MASTER release
-- List of AI Suite 3 modules in this pack : https://prntscr.com/tqy509
-- List of AI Suite 3 tabs in this pack : https://prntscr.com/tqy53k
+- List of AI Suite 3 modules in this pack : https://prntscr.com/w3o0ko
+- List of AI Suite 3 tabs in this pack : https://prntscr.com/w3o0mg
+ 
+## Versions
+- AI Suite 3 : 3.00.65 
+- EZ Update : 3.00.13
+- Fan RGB LED Control : 1.00.12
+- FanXpert 2 : 1.10.00 A1
+- File Transfert : 1.00.10
+- LED Control : 1.00.07
+- Performance and Power Saving Utilities : 2.00.51
+- System Information : 2.00.09
+- USB Boost : 1.10.00
  
 ## Why this package ?
 For unknown reason, Asus release AI Suite III without all programs, and some times, one of them don't work correctly, few times is renamed, or use another core system. This package contain all tested programs and keep up to date with latest release of each apps and AI Suite III core. This is an All In One and Updated version of the AI Suite II from Asus (one install for all).
