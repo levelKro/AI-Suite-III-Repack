@@ -1,0 +1,164 @@
+syntax = "proto3";
+package asus.fan;
+
+enum FANNameId 
+{
+	CPUFAN = 0;
+	ChASSISFAN1 = 1;
+	ChASSISFAN2 = 2;
+	ChASSISFAN3 = 3;
+	AIOPUMPFAN = 4;
+	HAMPFAN = 5;
+	CPUOPTFAN = 6;
+	EXTENSIONFAN1 = 7;
+	EXTENSIONFAN2 = 8;
+	EXTENSIONFAN3 = 9;
+	ECCHASSISFAN4 = 10;
+	ECCHASSISFAN5 = 11;
+	ASSTFAN1 = 12;
+	ASSTFAN2 = 13;
+	ASSTFAN3 = 14;
+	W_PUMP_1 = 15;
+	WATER_FLOW1 = 16;
+	WATER_FLOW2 = 17;
+	W_PUMP_2 = 18;
+	M_2_FAN = 19;
+}
+
+enum FAN_Pin_Type 
+{
+	PCH = 0;
+	EC = 1;
+	SIO = 2;
+	NEW_EC = 3;
+}
+
+enum FAN_Pin_PCH_GPIO_Group
+{
+	GPP_A = 0;
+	GPP_B = 1;
+	GPP_C = 2;
+	GPP_D = 3;
+	GPP_E = 4;
+	GPP_F = 5;
+	GPP_G = 6;
+	GPP_H = 7;
+	GPP_I = 8;
+	GPD = 9;
+}
+
+enum FAN_BIOS_Default_Mode
+{
+	DISABLE = 0;
+	AUTO = 1;
+	DC = 2;
+	PWM = 3;
+}
+
+enum FAN_EQ_Mode_Type
+{
+	EQUnSupport = 0;
+	EQModeEC = 1;
+	EQModeSIO = 2;
+}
+
+message Fan_RPM_Sensor
+{
+	string	Version = 1;
+	int32	Sensor_Id = 2;  
+	string	FanName = 3;
+	FANNameId FanNameId = 4;
+	int32	SIOBank = 5;
+	int32	ECBank = 6;
+	int32	Reg_High = 7;
+	int32	Reg_Low = 8;
+	int32	EC_Mapping = 9;
+	bool    ControlSupport = 10; //Is support RPM Mode
+	int32 	TYPE = 11;
+
+}
+
+message Fan_Control
+{	
+	string	Version = 1;
+	int32	Index = 2;  
+	string	FanName = 3;
+	FANNameId FanNameId = 4;
+	int32	SIOBank= 5;
+	int32	ECBank = 6;
+	FAN_EQ_Mode_Type EQModeSupport = 7;
+	int32	MultiSource_Support =8;
+	bool	AutoDetectSupport = 9;	
+	FAN_Pin_Type  ModePinType = 10;	
+	FAN_BIOS_Default_Mode DefualtMode = 11;	
+	FAN_Pin_PCH_GPIO_Group FanPinPCHGPIO_Group = 12;
+	int32	PCH_SIO_ModePin = 13;
+	int32	ModePin_EC_Bank = 14;
+	int32	ModePin_EC_Reg = 15;
+	int32	F6GroupNO = 16;
+	int32 	SourceDefault = 17;
+ 
+	int32	ModePin_EC_Reg_Bit = 20;
+	FAN_Pin_Type DetectPinType = 21;	
+	FAN_Pin_PCH_GPIO_Group	DetectPinPCHGPIO_Group = 22;
+	int32	DetectPin_PCH_SIO = 23;
+	int32	DetectPin_EC_Bank = 24;
+	int32	DetectPin_EC_Reg = 25; 
+	int32	DetectPin_EC_Reg_Bit = 26;	
+	FAN_Pin_Type DualModePinType = 27;
+	FAN_Pin_PCH_GPIO_Group	DualModePinPCHGPIO_Group = 28;
+	int32	DualModePin_PCH_SIO = 29;
+	int32	DualModePin_EC_Bank = 30;
+
+	int32	DualModePin_EC_Reg = 40; 
+	int32	DualModePin_EC_Reg_Bit = 41;	
+	int32	TEMPERATURE_SOURCE_ENABLE_0 = 42;
+	int32	TEMPERATURE_SOURCE_ENABLE_1 = 43;
+
+	bool	FanOverTimeSupport = 46;
+	bool	FanInverseSupport = 47;
+	bool	FanOffSupport = 48;
+	int32 	ECFanOffBit = 49;
+	bool	FanStepUpDownSupport = 50;
+
+	int32	StepUp = 55;
+	int32	StepDown = 56;
+	int32	ProfileSupport = 57;
+	int32	DCUpper_Temperature = 58;
+	int32	DCMax_DutyCycle = 59;
+	int32	DCMiddle_Temperature = 60;
+	int32	DCMiddle_DutyCycle = 61;
+	int32	DCLower_Temperature = 62;
+	int32	DCMin_DutyCycle = 63;
+	int32	PWMUpper_Temperature = 64;
+	int32	PWMMax_DutyCycle = 65;
+	int32	PWMMiddle_Temperature = 66;
+	int32	PWMMiddle_DutyCycle = 67;
+	int32	PWMLower_Temperature = 68;
+	int32	PWMMin_DutyCycle = 69;
+	int32	SpeedLowLimit = 70;
+	bool	QFanTuningSupport = 71;	
+
+	int32	ModePin_EC = 72;
+	int32	DetectPin_EC = 73;
+	int32	DualModePin_EC = 74;	
+}
+
+message TEMP_Sensor
+{
+	string	Version = 1;
+	int32	ID = 2;  
+	string	Name = 3;
+	int32   Type = 4;
+	int32	ECBank = 5;
+	int32	Reg_High = 6;
+	int32	HighLimit = 7;
+}
+
+message Fan_Info 
+{
+	string  SWVersion = 1;
+	repeated Fan_Control  FanCtrls = 20;
+	repeated Fan_RPM_Sensor FanRPMSensors = 21; 
+	repeated TEMP_Sensor TempSensors = 22;
+}

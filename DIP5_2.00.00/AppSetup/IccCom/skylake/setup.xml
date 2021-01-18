@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ICC_INSTALL>
+	<Install_Path DeviceId = "0xA13A" VendorId = "0x8086"  >"SetupICCS.exe" -s</Install_Path>	
+</ICC_INSTALL>
