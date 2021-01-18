@@ -2,8 +2,8 @@
 Repack the AI Suite III from Asus - for ASUS motherboards compatibles with AI Suite III
 
 ## In this current release
-- List of AI Suite 3 modules in this pack : https://prntscr.com/w3o0ko
-- List of AI Suite 3 tabs in this pack : https://prntscr.com/w3o0mg
+- List of AI Suite 3 modules in this pack : https://prnt.sc/x49ovh
+- List of AI Suite 3 tabs in this pack : https://prnt.sc/x49v0n
  
 ## Versions
 - AI Suite 3 : 3.00.65 
@@ -14,6 +14,7 @@ Repack the AI Suite III from Asus - for ASUS motherboards compatibles with AI Su
 - Performance and Power Saving Utilities : 2.00.51
 - System Information : 2.00.09
 - USB Boost : 1.10.00
+- Dual Intelligent Processor 5 : 2.00.00
  
 ## Why this package ?
 For unknown reason, Asus release AI Suite III without all programs, and some times, one of them don't work correctly, few times is renamed, or use another core system. This package contain all tested programs and keep up to date with latest release of each apps and AI Suite III core. This is an All In One and Updated version of the AI Suite III from Asus (one install for all).
