@@ -1,5 +1,7 @@
 # AI Suite III Repack
-Repack the AI Suite III from Asus - for ASUS motherboards compatibles with AI Suite III
+Repack the AI Suite III from Asus - for ASUS motherboards compatibles with AI Suite III.
+
+### Due to the access limitation and the difference between motherboards for AMD and Intel, this stable repack is no longer updated.
 
 ## In this current release
 - List of AI Suite 3 modules in this pack : https://prnt.sc/xgssnd
